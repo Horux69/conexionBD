@@ -36,7 +36,7 @@ def guardar():
             contrasena = valores['contrasena']
             encriptada = hashlib.sha512(contrasena.encode("utf-8")).hexdigest()
             valores['contrasena'] = encriptada
-
+# Esto es un comentario
             consulta = f"INSERT INTO usuarios ({', '.join(campos)}) VALUES ({', '.join(['%s'] * len(campos))})"
             valoresOrdenados = [valores[campo] for campo in campos]
             cursor.execute(consulta, valoresOrdenados)
